@@ -12,8 +12,8 @@ public class Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.Translate(transform.forward * (Time.deltaTime * _speed));
+        transform.Translate(Vector3.forward * (Time.deltaTime * _speed));
     }
 }

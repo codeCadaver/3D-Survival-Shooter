@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     {
         _controls = new PlayerControls();
         _controls.Player.Fire.performed += OnFire;
+        _controls.Player.Move.started += OnMove;
         _controls.Player.Move.performed += OnMove;
         _controls.Player.Move.canceled += OnMove;
     }
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     private void OnFire(InputAction.CallbackContext ctx)
     {
         Debug.Log("Shot Fired!!!");
-        GameObject bullet = Instantiate(_bullet, transform.position, Quaternion.identity);
+        Instantiate(_bullet, transform.position, Quaternion.identity);
     }
 
     private void FixedUpdate()
